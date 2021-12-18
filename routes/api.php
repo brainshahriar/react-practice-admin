@@ -24,3 +24,5 @@ Route::get('/alldata',[TestController::class,'index']);
 Route::post('/add-student',[TestController::class,'store']);
 
 Route::get('/studentshow',[TestController::class,'show']);
+
+Route::get('/edit-student/{id}',[TestController::class,'edit']);

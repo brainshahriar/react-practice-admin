@@ -39,4 +39,12 @@ class TestController extends Controller
             'students'=>$result,
         ]);
     }
+    public function edit($id)
+    {
+        $student=Student::find($id);
+        return response()->json([
+            'status'=>200,
+            'student'=>$student,
+        ]);
+    }
 }

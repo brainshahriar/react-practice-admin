@@ -47,4 +47,25 @@ class TestController extends Controller
             'student'=>$student,
         ]);
     }
+    public function update(Request $request,$id){
+
+             Student::findOrFail($id)->update([
+                 'name' => $request->name,
+                 'email' => $request->email,
+                 'phone' => $request->phone,
+                 'course' => $request->course,
+       
+             ]);
+            return response()->json([
+            'status'=>200,
+            'message'=>'Added'
+        ]);
+    }
+    public function destroy($id)
+    {
+        Student::findOrFail($id)->delete();
+        return response()->json([
+        'status'=>200,
+         'message'=>'Deleted'
+    }
 }

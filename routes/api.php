@@ -22,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/alldata',[TestController::class,'index']);
 
 Route::post('/add-student',[TestController::class,'store']);
+
+Route::get('/studentshow',[TestController::class,'show']);

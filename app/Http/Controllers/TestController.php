@@ -64,8 +64,9 @@ class TestController extends Controller
     public function destroy($id)
     {
         Student::findOrFail($id)->delete();
-        return response()->json([
-        'status'=>200,
-         'message'=>'Deleted'
+            return response()->json([
+            'status'=>200,
+            'message'=>'Deleted'
+        ]);
     }
 }

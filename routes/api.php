@@ -30,3 +30,8 @@ Route::get('/edit-student/{id}',[TestController::class,'edit']);
 Route::put('/update-student/{id}',[TestController::class,'update']);
 
 Route::delete('/delete-student/{id}',[TestController::class,'destroy']);
+
+
+Route::post('/store-details',[TestController::class,'storeDetails']);
+
+Route::get('/show-details',[TestController::class,'showDetails']);

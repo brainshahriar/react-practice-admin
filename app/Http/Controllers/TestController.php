@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Test;
 use App\Models\Student;
-
+use App\Models\Detail;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -68,5 +68,24 @@ class TestController extends Controller
             'status'=>200,
             'message'=>'Deleted'
         ]);
+    }
+    public function storeDetails(Request $request)
+    {
+
+         $name=$request->input('name');
+         $email=$request->input('email');
+         $phone=$request->input('phone');
+
+            $result=Detail::insert([
+            'email'=>$email,
+            'name'=>$name,
+            'phone'=>$phone,
+        ]);
+            return $result;
+    }
+    public function showDetails()
+    {
+        $show=Detail::all();
+        return $show;
     }
 }

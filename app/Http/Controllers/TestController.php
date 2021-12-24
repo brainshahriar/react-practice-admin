@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Test;
 use App\Models\Student;
 use App\Models\Detail;
+use App\Models\Data;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -86,6 +87,16 @@ class TestController extends Controller
     public function showDetails()
     {
         $show=Detail::all();
+        return $show;
+    }
+        public function showData()
+    {
+        $show=Data::all();
+        return $show;
+    }
+    public function DataDetails($id)
+    {
+        $show=Data::where('id',$id)->get();
         return $show;
     }
 }

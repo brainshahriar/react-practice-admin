@@ -35,3 +35,7 @@ Route::delete('/delete-student/{id}',[TestController::class,'destroy']);
 Route::post('/store-details',[TestController::class,'storeDetails']);
 
 Route::get('/show-details',[TestController::class,'showDetails']);
+
+Route::get('/show-data',[TestController::class,'showData']);
+
+Route::get('/datadetails/{id}',[TestController::class,'DataDetails']);

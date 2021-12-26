@@ -4,7 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\CatrgoryController;
+use App\Http\Controllers\SubcategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +51,7 @@ Route::post('/store-contact',[ContactController::class,'store']);
 
 //category
 
-Route::get('/categoryall',[ContactController::class,'indexapi']);
+Route::get('/categoryall',[CatrgoryController::class,'indexapi']);
 
 
 

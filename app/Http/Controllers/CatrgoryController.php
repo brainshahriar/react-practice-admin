@@ -22,6 +22,10 @@ class CatrgoryController extends Controller
 
         Category::findOrFail($id)->delete();
          return back()->with('success', 'Deleted');
+    }
+    public function indexapi(){
+        $category=Category::all();
+        return $category;
+    }
 
-}
 }

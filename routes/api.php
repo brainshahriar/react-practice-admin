@@ -48,5 +48,9 @@ Route::get('/contact',[ContactController::class,'indexapi']);
 
 Route::post('/store-contact',[ContactController::class,'store']);
 
+//category
+
+Route::get('/categoryall',[ContactController::class,'indexapi']);
+
 
 

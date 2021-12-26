@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CatrgoryController;
+use App\Http\Controllers\SubcategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +31,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //contact route
 
 Route::get('/contactdetails',[ContactController::class,'index'])->name('contact');
-Route::get('/category',[ContactController::class,'index'])->name('category');
-Route::get('/subcategory',[ContactController::class,'index'])->name('subcategory');
+
+//category
+Route::get('/category',[CatrgoryController::class,'index'])->name('category');
+Route::post('/category-store',[CatrgoryController::class,'store'])->name('store-category');
+Route::get('/delete-category/{id}',[CatrgoryController::class,'delete']);
+
+//subcategory
+Route::get('/subcategory',[SubcategoryController::class,'index'])->name('subcategory');
+Route::post('/subcategory-store',[SubcategoryController::class,'store'])->name('store-subcategory');
+Route::get('/delete-subcategory/{id}',[SubcategoryController::class,'delete']);

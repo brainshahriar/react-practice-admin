@@ -72,8 +72,7 @@ class TestController extends Controller
     }
     public function storeDetails(Request $request)
     {
-        dd($request->all());
-
+     
          $name=$request->input('name');
          $email=$request->input('email');
          $phone=$request->input('phone');

@@ -46,6 +46,7 @@ Route::get('/datadetails/{id}',[TestController::class,'DataDetails']);
 
 Route::get('/contact',[ContactController::class,'indexapi']);
 
+Route::post('/store-contact',[ContactController::class,'store']);
 
 
 

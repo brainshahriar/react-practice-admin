@@ -4,7 +4,7 @@
             <img src="{{ asset('backend') }}/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
         </div>
         <div>
-            <h4 class="logo-text">Evergrow</h4>
+            <h4 class="logo-text">Test</h4>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -28,10 +28,10 @@
 
         </li>
         <li>
-            <a href="" >
+            <a href="{{route('contact')}}" >
                 <div class="parent-icon"><i class='bx bx-wallet'></i>
                 </div>
-                <div class="menu-title">Payment Method</div>
+                <div class="menu-title">Contact With Us</div>
             </a>
 
         </li>

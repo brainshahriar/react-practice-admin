@@ -17,10 +17,14 @@ Route::get('/', function () {
 });
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.home');
 })->name('dashboard');
+
+//contact route
+
+Route::get('/contactdetails',[ContactController::class,'index'])->name('contact');

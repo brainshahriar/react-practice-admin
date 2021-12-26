@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ContactController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +41,11 @@ Route::get('/show-details',[TestController::class,'showDetails']);
 Route::get('/show-data',[TestController::class,'showData']);
 
 Route::get('/datadetails/{id}',[TestController::class,'DataDetails']);
+
+//contact route
+
+Route::get('/contact',[ContactController::class,'indexapi']);
+
+
+
+

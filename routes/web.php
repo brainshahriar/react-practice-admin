@@ -29,3 +29,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //contact route
 
 Route::get('/contactdetails',[ContactController::class,'index'])->name('contact');
+Route::get('/category',[ContactController::class,'index'])->name('category');
+Route::get('/subcategory',[ContactController::class,'index'])->name('subcategory');

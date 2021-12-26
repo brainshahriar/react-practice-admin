@@ -36,14 +36,22 @@
 
         </li>
         <li>
-            <a href="" >
+  
+            <a href="{{route('category')}}" >
                 <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
-                <div class="menu-title">Deposit Request</div>
+                <div class="menu-title">Category</div>
             </a>
 
-        </li>
 
+        </li>
+        <li>
+            <a href="{{route('subcategory')}}" >
+                <div class="parent-icon"><i class='bx bx-cart'></i>
+                </div>
+                <div class="menu-title">Subcategory</div>
+            </a>
+        </li>
 
 
 

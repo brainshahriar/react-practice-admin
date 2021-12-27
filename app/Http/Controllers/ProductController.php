@@ -12,4 +12,9 @@ class ProductController extends Controller
         $product=Product::all();
         return $product;
     }
+ public function showDetails($id)
+    {
+        $product=Product::where('id',$id)->get();
+        return $product;
+    }
 }

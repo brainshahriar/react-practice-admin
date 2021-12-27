@@ -6,6 +6,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CatrgoryController;
 use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +56,8 @@ Route::get('/categoryall',[CatrgoryController::class,'indexapi']);
 
 //product
 
-Route::get('/productall',[ProdutController::class,'indexapi']);
+Route::get('/productall',[ProductController::class,'indexapi']);
+Route::get('/details/{id}',[ProductController::class,'showDetails']);
 
 
 

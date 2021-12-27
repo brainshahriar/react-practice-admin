@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Subcategory;
 
 class CatrgoryController extends Controller
 {
@@ -24,8 +25,19 @@ class CatrgoryController extends Controller
          return back()->with('success', 'Deleted');
     }
     public function indexapi(){
-        $category=Category::all();
-        return $category;
+            $category=Category::all();
+            $allArray=[];
+            foreach ($category as $value) {
+                $subcategory=Subcategory::where('category_id',$value['id'])->get();
+                $item=[
+
+                    'category_name'=>$value['category_name'],
+                    'subcategory_name'=>$subcategory
+
+                ];
+                array_push($allArray,$item);
+            }
+            return $allArray;
     }
 
 }

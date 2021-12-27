@@ -53,5 +53,11 @@ Route::post('/store-contact',[ContactController::class,'store']);
 
 Route::get('/categoryall',[CatrgoryController::class,'indexapi']);
 
+//product
+
+Route::get('/productall',[ProdutController::class,'indexapi']);
+
+
+
 
 

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\AttendenceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +34,13 @@ Route::post('/register',[AuthController::class, 'Register']);
 Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
  /////////////// End User Login API Start ////////////////////////
 
+//all employee roue
 
+Route::get('/allemployee',[EmployeeController::class, 'indexapi']);
 
+//
+
+Route::post('/attendencestore',[AttendenceController::class, 'indexapi']);
 
 
 

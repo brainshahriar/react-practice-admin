@@ -12,9 +12,9 @@ class AttendenceController extends Controller
 {
     public function indexapi(Request $request){
 
-        $request->validate([
-            'present_date'=>'required|unique:attendences,present_date',
-        ]);
+        // $request->validate([
+        //     'present_date'=>'required|unique:attendences,present_date',
+        // ]);
 
 
         $user_id=$request->input('user_id');
@@ -37,9 +37,9 @@ class AttendenceController extends Controller
 
     public function updateapi(Request $request){
 
-        $request->validate([
-            'out_date'=>'required|unique:attendenceouts,out_date',
-        ]);
+        // $request->validate([
+        //     'out_date'=>'required|unique:attendenceouts,out_date',
+        // ]);
 
         $user_id=$request->input('user_id');
         $out_reason=$request->input('out_reason');
@@ -60,7 +60,7 @@ class AttendenceController extends Controller
 
     }
 
-    public function detailsapi(){
+    public function detailsapi($id){
         $details=Attendence::all();
         $detArray=[];
         foreach ($details as $value) {
@@ -70,7 +70,7 @@ class AttendenceController extends Controller
                 'present_date'=>$value['present_date'],
                 'attendeceoutdetails'=>$details2,
             ];
-            array_push($detArray,$item)
+            array_push($detArray,$item);
         }
         return $detArray;
     }

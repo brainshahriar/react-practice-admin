@@ -3,25 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Attendece;
+use App\Models\Attendence;
+
 
 class AttendenceController extends Controller
 {
     public function indexapi(Request $request){
 
+        $request->validate([
+            'present_date'=>'required|unique:attendences,present_date',
+        ]);
+
+
         $user_id=$request->input('user_id');
         $reason=$request->input('reason');
+        $present_date=$request->input('present_date');
         date_default_timezone_set("ASIA/Dhaka");
-        $contact_date=date("h:i:sa");
+        $present_time=date("h:i:sa");
         $present_status=1;
-        $present_time=date("d-m-Y");
+       
 
-        $result=Attendece::insert([
+
+        $result=Attendence::insert([
             'user_id'=>$user_id,
             'reason'=>$reason,
             'present_date'=>$present_date,
             'present_time'=>$present_time,
         ]);
         return $result;
+    }
+    public function detailsapi(){
+        $details=Attendence::all();
+        return $details;
     }
 }

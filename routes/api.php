@@ -27,20 +27,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  // Login Routes 
 Route::post('/login',[AuthController::class, 'Login']);
 
- // Register Routes 
+ // Register Routes
 Route::post('/register',[AuthController::class, 'Register']);
 
  // Current User Route 
 Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
  /////////////// End User Login API Start ////////////////////////
 
-//all employee roue
+//all employee route
 
 Route::get('/allemployee',[EmployeeController::class, 'indexapi']);
 
 //
 
 Route::post('/attendencestore',[AttendenceController::class, 'indexapi']);
+Route::get('/attendencedetails',[AttendenceController::class, 'detailsapi']);
 
 
 

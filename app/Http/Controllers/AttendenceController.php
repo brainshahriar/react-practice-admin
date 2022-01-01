@@ -65,9 +65,8 @@ class AttendenceController extends Controller
         return $attendence;
     }
 
-    public function detailsapi(Request $request){
-        $user_id=$request->id;
-        $attendence=Attendence::where('user_id',$user_id)->get();
+    public function detailsapi($id){
+        $attendence=Attendence::where('user_id',$id)->with('employee')->get();
         return $attendence;
     }
 }

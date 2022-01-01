@@ -65,21 +65,9 @@ class AttendenceController extends Controller
         return $attendence;
     }
 
-    public function detailsapi($id){
-        // $details=Attendence::where('user_id',$id)->latest()->get();
-        // $detArray=[];
-        // foreach ($details as $value) {
-        //     $details2=Attendenceout::where('user_id',$id)->latest()->get();
-        //     $item=[
-        //         'present_time'=>$value['present_time'],
-        //         'present_date'=>$value['present_date'],
-        //         'reason'=>$value['reason'],
-        //         'attendeceoutdetails'=>$details2,
-        //     ];
-        //     array_push($detArray,$item);
-        // }
-        // return $detArray;
-        $details=Attendence::where('user_id',$id)->latest()->get();
-        return $details;
+    public function detailsapi(Request $request){
+        $user_id=$request->id;
+        $attendence=Attendence::where('user_id',$user_id)->get();
+        return $attendence;
     }
 }

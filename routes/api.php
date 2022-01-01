@@ -45,4 +45,5 @@ Route::get('/attendencedetails/{id}',[AttendenceController::class, 'detailsapi']
 Route::post('/attendenceupdate',[AttendenceController::class, 'updateapi']);
 
 
+Route::get('/allattendence',[AttendenceController::class, 'attendence']);
 

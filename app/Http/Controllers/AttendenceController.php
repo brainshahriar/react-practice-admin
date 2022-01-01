@@ -59,6 +59,11 @@ class AttendenceController extends Controller
         return $result;
 
     }
+    public function attendence()
+    {
+        $attendence=Attendence::all();
+        return $attendence;
+    }
 
     public function detailsapi($id){
         // $details=Attendence::where('user_id',$id)->latest()->get();

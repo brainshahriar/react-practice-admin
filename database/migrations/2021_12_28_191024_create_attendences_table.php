@@ -18,8 +18,10 @@ class CreateAttendencesTable extends Migration
             $table->integer('user_id');
             $table->string('present_time');
             $table->string('present_date');
-            $table->string('present_status')->nullable();
             $table->text('reason')->nullable();
+            $table->string('out_time')->nullable();
+            $table->text('out_reason')->nullable();
+            $table->text('status')->nullable();
             $table->timestamps();
         });
     }

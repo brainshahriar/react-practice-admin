@@ -37,28 +37,12 @@ class AttendenceController extends Controller
 
     public function updateapi(Request $request,$id){
 
-        // $request->validate([
-        //     'out_date'=>'required|unique:attendenceouts,out_date',
-        // ]);
 
-        // $user_id=$request->input('user_id');
-        // $out_reason=$request->input('out_reason');
-        // $out_date=$request->input('out_date');
-        // date_default_timezone_set("ASIA/Dhaka");
-        // $out_time=date("h:i:sa");
-        // $out_status=1;
-       
-
-
-        // $result=Attendenceout::insert([
-        //     'user_id'=>$user_id,
-        //     'out_reason'=>$out_reason,
-        //     'out_date'=>$out_date,
-        //     'out_time'=>$out_time,
-        // ]);
-        // return $result;
-        Attendence::findOrFail($id)->update([
-             'out_time'=>$request->out_time,
+        date_default_timezone_set("ASIA/Dhaka");
+        $out_time=date("h:i:sa");
+        Attendence::where('user_id',$id)->update([
+             'out_time'=>$out_time,
+             'out_reason'=>$request->out_reason
         ]);
         return response('updated');
 

@@ -35,28 +35,32 @@ class AttendenceController extends Controller
         return $result;
     }
 
-    public function updateapi(Request $request){
+    public function updateapi(Request $request,$id){
 
         // $request->validate([
         //     'out_date'=>'required|unique:attendenceouts,out_date',
         // ]);
 
-        $user_id=$request->input('user_id');
-        $out_reason=$request->input('out_reason');
-        $out_date=$request->input('out_date');
-        date_default_timezone_set("ASIA/Dhaka");
-        $out_time=date("h:i:sa");
-        $out_status=1;
+        // $user_id=$request->input('user_id');
+        // $out_reason=$request->input('out_reason');
+        // $out_date=$request->input('out_date');
+        // date_default_timezone_set("ASIA/Dhaka");
+        // $out_time=date("h:i:sa");
+        // $out_status=1;
        
 
 
-        $result=Attendenceout::insert([
-            'user_id'=>$user_id,
-            'out_reason'=>$out_reason,
-            'out_date'=>$out_date,
-            'out_time'=>$out_time,
+        // $result=Attendenceout::insert([
+        //     'user_id'=>$user_id,
+        //     'out_reason'=>$out_reason,
+        //     'out_date'=>$out_date,
+        //     'out_time'=>$out_time,
+        // ]);
+        // return $result;
+        Attendence::findOrFail($id)->update([
+             'out_time'=>$request->out_time,
         ]);
-        return $result;
+        return response('updated');
 
     }
     public function attendence()
@@ -66,7 +70,13 @@ class AttendenceController extends Controller
     }
 
     public function detailsapi($id){
-        $attendence=Attendence::where('user_id',$id)->with('employee')->get();
+        $attendence=Attendence::where('user_id',$id)->get();
+        // $attendenceout=Attendenceout::where('user_id',$id)->get();
+
+        // $item=[
+        //     'attendence'=>$attendence,
+        //     'attendenceout'=>$attendenceout
+        // ];
         return $attendence;
     }
 }

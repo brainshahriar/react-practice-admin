@@ -42,7 +42,7 @@ Route::get('/allemployee',[EmployeeController::class, 'indexapi']);
 
 Route::post('/attendencestore',[AttendenceController::class, 'indexapi']);
 Route::get('/attendencedetails/{id}',[AttendenceController::class, 'detailsapi']);
-Route::post('/attendenceupdate',[AttendenceController::class, 'updateapi']);
+Route::post('/attendenceupdate/{id}',[AttendenceController::class, 'updateapi']);
 
 
 

@@ -54,13 +54,7 @@ class AttendenceController extends Controller
     }
 
     public function detailsapi($id){
-        $attendence=Attendence::where('user_id',$id)->get();
-        // $attendenceout=Attendenceout::where('user_id',$id)->get();
-
-        // $item=[
-        //     'attendence'=>$attendence,
-        //     'attendenceout'=>$attendenceout
-        // ];
+        $attendence=Attendence::where('user_id',$id)->orderBy('id', 'DESC')->get();
         return $attendence;
     }
 }

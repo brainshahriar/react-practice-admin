@@ -24,4 +24,5 @@ class Attendence extends Model
         {
            return $this->belongsTo(Attendenceout::class,'user_id');
         }
+
 }

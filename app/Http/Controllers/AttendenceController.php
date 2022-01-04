@@ -19,11 +19,12 @@ class AttendenceController extends Controller
 
         $user_id=$request->input('user_id');
         $reason=$request->input('reason');
+        $first_name_and_date=$request->input('first_name_and_date');
         $present_date=$request->input('present_date');
         date_default_timezone_set("ASIA/Dhaka");
         $present_time=date("h:i:sa");
         $present_status=1;
-        
+
        
 
 
@@ -32,6 +33,7 @@ class AttendenceController extends Controller
             'reason'=>$reason,
             'present_date'=>$present_date,
             'present_time'=>$present_time,
+            'first_name_and_date'=>$first_name_and_date
         ]);
         return $result;
     }

@@ -12,9 +12,9 @@ class AttendenceController extends Controller
 {
     public function indexapi(Request $request){
 
-        // $request->validate([
-        //     'present_date'=>'required|unique:attendences,present_date',
-        // ]);
+        $request->validate([
+            'first_name_and_date'=>'required|unique:attendences,first_name_and_date',
+        ]);
 
 
         $user_id=$request->input('user_id');
@@ -38,21 +38,42 @@ class AttendenceController extends Controller
         return $result;
     }
 
-    public function updateapi(Request $request,$id){
+    public function updateapi(Request $request){
 
 
+       $request->validate([
+            'last_name_and_date'=>'required|unique:attendenceouts,last_name_and_date',
+        ]);
+
+
+        $user_id=$request->input('user_id');
+        $out_reason=$request->input('out_reason');
+        $last_name_and_date=$request->input('last_name_and_date');
+        $out_date=$request->input('out_date');
         date_default_timezone_set("ASIA/Dhaka");
         $out_time=date("h:i:sa");
-        Attendence::where('user_id',$id)->update([
-             'out_time'=>$out_time,
-             'out_reason'=>$request->out_reason
-        ]);
-        return response('updated');
+        $out_status=1;
 
+       
+
+
+        $result=Attendenceout::insert([
+            'user_id'=>$user_id,
+            'out_reason'=>$out_reason,
+            'out_date'=>$out_date,
+            'out_time'=>$out_time,
+            'last_name_and_date'=>$last_name_and_date
+        ]);
+        return $result;
     }
+    
 
     public function detailsapi($id){
         $attendence=Attendence::where('user_id',$id)->orderBy('id', 'DESC')->get();
         return $attendence;
+    }
+        public function detailsapi2($id){
+        $attendenceout=Attendenceout::where('user_id',$id)->orderBy('id', 'DESC')->get();
+        return $attendenceout;
     }
 }

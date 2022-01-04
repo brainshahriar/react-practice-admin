@@ -20,6 +20,7 @@ class CreateAttendenceoutsTable extends Migration
             $table->string('out_date');
             $table->string('out_status')->nullable();
             $table->text('out_reason')->nullable();
+            $table->string('last_name_and_date');
             $table->timestamps();
         });
     }

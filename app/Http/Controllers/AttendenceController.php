@@ -23,6 +23,7 @@ class AttendenceController extends Controller
         date_default_timezone_set("ASIA/Dhaka");
         $present_time=date("h:i:sa");
         $present_status=1;
+        
        
 
 
@@ -46,11 +47,6 @@ class AttendenceController extends Controller
         ]);
         return response('updated');
 
-    }
-    public function attendence()
-    {
-        $attendence=Attendence::all();
-        return $attendence;
     }
 
     public function detailsapi($id){

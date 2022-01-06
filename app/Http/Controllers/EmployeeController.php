@@ -24,4 +24,14 @@ class EmployeeController extends Controller
         }
         return $employeeArray;
     }
+function saveImage(Request $request)
+    {
+      $designation = $request->input('designation');
+      $filepath = $request->file('file')->store('public');
+       
+      DB::table('employees')->insert([
+            'img_path' => $filepath,
+            'description'=> $designation
+          ]); 
+    }
 }

@@ -36,6 +36,7 @@ Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
 
 //all employee route
 
+Route::post('/employeestore',[AttendenceController::class, 'storeapi']);
 Route::get('/allemployee',[EmployeeController::class, 'indexapi']);
 
 //
@@ -46,6 +47,9 @@ Route::get('/attendencedetails/{id}',[AttendenceController::class, 'detailsapi']
 Route::get('/attendencedetails2/{id}',[AttendenceController::class, 'detailsapi2']);
 
 Route::post('/attendenceupdate',[AttendenceController::class, 'updateapi']);
+
+
+
 
 
 

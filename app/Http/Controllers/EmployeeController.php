@@ -14,7 +14,7 @@ class EmployeeController extends Controller
         $user=User::all();
         $employeeArray=[];
         foreach($user as $value){
-            $employee=Employee::where('user_id',$value['id'])->get();
+            $employee=Employee::where('user_id',$value['id'])->orderBy('id', 'desc')->take(1)->get();
             $item=[
 
                 'name'=>$value['name'],

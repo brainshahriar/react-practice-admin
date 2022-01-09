@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\AttendenceController;
+use App\Http\Controllers\AttendenceController; 
 
 /*
 |--------------------------------------------------------------------------

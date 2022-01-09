@@ -23,7 +23,7 @@
             <a href="" >
                 <div class="parent-icon"><i class='bx bx-user'></i>
                 </div>
-                <div class="menu-title">Users</div>
+                <div class="menu-title">Employees & Details</div>
             </a>
 
         </li>
@@ -31,27 +31,11 @@
             <a href="{{route('contact')}}" >
                 <div class="parent-icon"><i class='bx bx-wallet'></i>
                 </div>
-                <div class="menu-title">Contact With Us</div>
+                <div class="menu-title">Leave Applications</div>
             </a>
 
         </li>
-        <li>
-  
-            <a href="{{route('category')}}" >
-                <div class="parent-icon"><i class='bx bx-cart'></i>
-                </div>
-                <div class="menu-title">Category</div>
-            </a>
 
-
-        </li>
-        <li>
-            <a href="{{route('subcategory')}}" >
-                <div class="parent-icon"><i class='bx bx-cart'></i>
-                </div>
-                <div class="menu-title">Subcategory</div>
-            </a>
-        </li>
 
 
 

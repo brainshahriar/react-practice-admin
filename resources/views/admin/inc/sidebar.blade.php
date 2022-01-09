@@ -20,7 +20,7 @@
 
         </li>
         <li>
-            <a href="" >
+            <a href="{{ route('allemployee') }}" >
                 <div class="parent-icon"><i class='bx bx-user'></i>
                 </div>
                 <div class="menu-title">Employees & Details</div>
@@ -35,11 +35,6 @@
             </a>
 
         </li>
-
-
-
-
-
 
     </ul>
     <!--end navigation-->

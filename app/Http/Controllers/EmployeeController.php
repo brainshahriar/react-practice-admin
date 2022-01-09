@@ -63,4 +63,7 @@ function updatestoreapi(Request $request,$id)
       ]);
       return $upload;
     }
+    public function index(){
+      return view('employee_lists');
+    }
 }

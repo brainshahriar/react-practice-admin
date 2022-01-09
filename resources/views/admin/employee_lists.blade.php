@@ -36,7 +36,7 @@
 
               </tr>
             </thead>
-            <tbody>
+            {{-- <tbody>
                 @foreach($users as $row)
               <tr>
 
@@ -60,7 +60,7 @@
 
 
 
-            </tbody>
+            </tbody> --}}
 
           </table>
         </div>

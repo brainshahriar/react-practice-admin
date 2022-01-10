@@ -28,7 +28,7 @@
 
         </li>
         <li>
-            <a href="{{route('contact')}}" >
+            <a href="" >
                 <div class="parent-icon"><i class='bx bx-wallet'></i>
                 </div>
                 <div class="menu-title">Leave Applications</div>

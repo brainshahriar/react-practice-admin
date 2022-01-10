@@ -6,20 +6,20 @@
 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-      <div class="breadcrumb-title pe-3">User Lists</div>
+      <div class="breadcrumb-title pe-3">Employee Lists</div>
       <div class="ps-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb mb-0 p-0">
             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">User Lists</li>
+            <li class="breadcrumb-item active" aria-current="page">Employee Lists</li>
           </ol>
         </nav>
       </div>
 
     </div>
     <!--end breadcrumb-->
-    <h6 class="mb-0 text-uppercase">Users</h6>
+    <h6 class="mb-0 text-uppercase">Employee</h6>
     <hr/>
     <div class="card">
       <div class="card-body">
@@ -29,38 +29,25 @@
               <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Sponsor User Name</th>
-                <th>Position</th>
-                <th>Created</th>
-
+                <th>Designation</th>
+                <th>Employee ID</th>
+                <th>Action</th>
               </tr>
             </thead>
-            {{-- <tbody>
-                @foreach($users as $row)
+            <tbody>
+                @foreach($employee as $row)
               <tr>
 
                 <td>{{$loop->index+1}}</td>
-                <td>{{$row->name}}</td>
-                <td>{{$row->email}}</td>
-                <td>{{$row->sponsors->user_name}}</td>
-                <td>
-                  @if($row->position==1)
-                  Left
-                  @else
-                    Right
-
-                    @endif</td>
-                <td>{{$row->created_at}}</td>
+                <td>{{$row->user->name}}</td>
+                <td>{{$row->designation}}</td>
+                <td>568{{$row->user->id}}</td>
+                <td><a type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
 
               </tr>
   @endforeach
 
-
-
-
-
-            </tbody> --}}
+            </tbody>
 
           </table>
         </div>
@@ -75,7 +62,7 @@
   	</script>
   	<script>
   		$(document).ready(function() {
-  			var table = $('#example2').DataTable( {
+  			var table = $('#example').DataTable( {
   				lengthChange: false,
   				buttons: [ 'copy', 'excel', 'pdf', 'print']
   			} );

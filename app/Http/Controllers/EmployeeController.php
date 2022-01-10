@@ -64,6 +64,7 @@ function updatestoreapi(Request $request,$id)
       return $upload;
     }
     public function index(){
-      return view('employee_lists');
+        $employee=Employee::all();
+      return view('admin.employee_lists',compact('employee'));
     }
 }

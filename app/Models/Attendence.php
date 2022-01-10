@@ -22,7 +22,7 @@ class Attendence extends Model
         }
         public function attendenceout()
         {
-           return $this->belongsTo(Attendenceout::class,'id');
+           return $this->belongsTo(Attendenceout::class,'user_id');
         }
 
 }

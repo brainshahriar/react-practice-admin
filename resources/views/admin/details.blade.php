@@ -28,26 +28,29 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th>Designation</th>
-                <th>Employee ID</th>
-                <th>Action</th>
+                <th>Date</th>
+                <th>In Time</th>
+                <th>Late Reason</th>
+                <th>Out Time</th>
+                <th>Out Reason</th>
+                <th>Status</th>
               </tr>
             </thead>
-            {{-- <tbody>
-                @foreach($employee as $row)
+            <tbody>
+                @foreach($attendence as $row)
+                
               <tr>
-
                 <td>{{$loop->index+1}}</td>
-                <td>{{$row->user->name}}</td>
-                <td>{{$row->designation}}</td>
-                <td>568{{$row->user->id}}</td>
-                <td><a href="{{ url('details/'.$roe->id) }}" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
-
+                <td>{{$row->present_date}}</td>
+                <td>{{$row->present_time}}</td>
+                <td>{{$row->reason}}</td>
+                {{-- <td>{{$row->attendenceout->out_time}}</td>
+                <td>{{$row->attendenceout->out_reason}}</td> --}}
+                <td><a href="" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
               </tr>
             @endforeach
 
-            </tbody> --}}
+            </tbody>
 
           </table>
         </div>

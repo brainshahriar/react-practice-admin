@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\User;
+use App\Models\Attendence;
+use App\Models\Attendenceout;
 use Image;
 
 class EmployeeController extends Controller
@@ -69,7 +71,17 @@ function updatestoreapi(Request $request,$id)
     }
 
     public function details($id){
-      $employee=Employee::orderBy('id', 'desc')->get();
-    return view('details');
+      $attendence=Attendence::where('user_id',$id)->orderBy('id', 'desc')->get();
+      $attarray=[];
+      foreach($attendence as $value){
+        $attendenceout=Attendenceout::where('user_id',$value['id'])->orderBy('id', 'desc')->get();
+        $item=[
+          // 'name'=>$value['name'],
+          'employee'=>$attendenceout,
+        ];
+        array_push($attarray,$item);
+      }
+      return $attarray;
+    // return view('admin.details',compact('attendence'));
   }
 }

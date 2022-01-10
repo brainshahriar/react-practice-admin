@@ -41,8 +41,8 @@
                 <td>{{$loop->index+1}}</td>
                 <td>{{$row->user->name}}</td>
                 <td>{{$row->designation}}</td>
-                <td>568{{$row->user->id}}</td>
-                <td><a href="{{ url('details/'.$roe->id) }}" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
+                <td>00{{$row->user->id}}</td>
+                <td><a href="{{ url('details/'.$row->user->id) }}" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
 
               </tr>
   @endforeach

@@ -3,6 +3,8 @@
 @section('content')
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -18,54 +20,93 @@
       </div>
 
     </div>
-    <!--end breadcrumb-->
-    <h6 class="mb-0 text-uppercase">Employee</h6>
+
     <hr/>
-    <div class="card">
-      <div class="card-body">
-        <div class="table-responsive">
-          <table id="example" class="table table-striped table-bordered" style="width:100%">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Date</th>
-                <th>In Time</th>
-                <th>Late Reason</th>
-                <th>Out Time</th>
-                <th>Out Reason</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-                @foreach($attendence as $row)         
-              <tr>
-                <td>{{$loop->index+1}}</td>
-                  <td>{{$row->present_date}}</td>
-                <td>{{$row->present_time}}</td>
-                <td>{{$row->reason}}</td>
-                <td>{{$row->attendenceout->out_time}}</td>
-                <td>{{$row->attendenceout->out_reason}}</td>
-                <td><a href="" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
-              </tr>
-            @endforeach
 
-            </tbody>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>In Status</h4>
+        <table id="example" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Date</th>
+              <th>In Time</th>
+              <th>Late Reason</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+              @foreach($attendence as $row)       
+            <tr>
+              <td>{{$loop->index+1}}</td>
+                <td>{{$row->present_date}}</td>
+              <td>{{$row->present_time}}</td>
+              <td>{{$row->reason}}</td>
+              <td><a href="" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
+            </tr>
+          @endforeach
 
-          </table>
-        </div>
+          </tbody>
+
+        </table>
       </div>
-    </div>
+      <div class="col-md-6">
+        <h4>Out Status</h4>
+        <table id="example2" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Date</th>
+              <th>Out Time</th>
+              <th>Out Reason</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+              @foreach($attendenceout as $row)       
+            <tr>
+              <td>{{$loop->index+1}}</td>
+                <td>{{$row->out_date}}</td>
+              <td>{{$row->out_time}}</td>
+              <td>{{$row->out_reason}}</td>
+              <td><a href="" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
+            </tr>
+          @endforeach
+
+          </tbody>
+
+        </table>
+      </div>
+  </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-    <script>
-  		$(document).ready(function() {
-  			$('#example').DataTable();
-  		  } );
-  	</script>
-
-
+<script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.print.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+$(document).ready(function() {
+    $('#example2').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+</script>
 
 
 

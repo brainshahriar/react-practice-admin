@@ -19,6 +19,10 @@ class Attendenceout extends Model
         {
            return $this->belongsTo(User::class,'user_id');
         }
+        public function attendence()
+        {
+           return $this->belongsTo(Attendence::class,'user_id');
+        }
 
 
 }

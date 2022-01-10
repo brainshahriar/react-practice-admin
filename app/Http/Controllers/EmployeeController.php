@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Attendence;
 use App\Models\Attendenceout;
 use Image;
+use Auth;
 
 class EmployeeController extends Controller
 {
@@ -71,8 +72,9 @@ function updatestoreapi(Request $request,$id)
     }
 
     public function details($id){
-      $attendence=Attendence::where('user_id',$id)->with('attendenceout')->orderBy('id', 'desc')->get();
-      dd($attendence);
-      return view('admin.details',compact('attendence'));
+      $attendence=Attendence::where('user_id',$id)->orderBy('id', 'desc')->get();
+      $attendenceout=Attendenceout::where('user_id',$id)->orderBy('id', 'desc')->get();
+      // $attendence=User::join('attendenceouts','attendenceouts.user_id','=','attendences.user_id')->get();
+      return view('admin.details',compact('attendence','attendenceout'));
   }
 }

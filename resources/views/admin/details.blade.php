@@ -37,15 +37,14 @@
               </tr>
             </thead>
             <tbody>
-                @foreach($attendence as $row)
-                
+                @foreach($attendence as $row)         
               <tr>
                 <td>{{$loop->index+1}}</td>
-                <td>{{$row->present_date}}</td>
+                  <td>{{$row->present_date}}</td>
                 <td>{{$row->present_time}}</td>
                 <td>{{$row->reason}}</td>
-                {{-- <td>{{$row->attendenceout->out_time}}</td>
-                <td>{{$row->attendenceout->out_reason}}</td> --}}
+                <td>{{$row->attendenceout->out_time}}</td>
+                <td>{{$row->attendenceout->out_reason}}</td>
                 <td><a href="" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
               </tr>
             @endforeach

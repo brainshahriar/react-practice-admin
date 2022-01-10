@@ -71,17 +71,8 @@ function updatestoreapi(Request $request,$id)
     }
 
     public function details($id){
-      $attendence=Attendence::where('user_id',$id)->orderBy('id', 'desc')->get();
-      $attarray=[];
-      foreach($attendence as $value){
-        $attendenceout=Attendenceout::where('user_id',$value['id'])->orderBy('id', 'desc')->get();
-        $item=[
-          // 'name'=>$value['name'],
-          'employee'=>$attendenceout,
-        ];
-        array_push($attarray,$item);
-      }
-      return $attarray;
-    // return view('admin.details',compact('attendence'));
+      $attendence=Attendence::where('user_id',$id)->with('attendenceout')->orderBy('id', 'desc')->get();
+      dd($attendence);
+      return view('admin.details',compact('attendence'));
   }
 }

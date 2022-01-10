@@ -64,7 +64,12 @@ function updatestoreapi(Request $request,$id)
       return $upload;
     }
     public function index(){
-        $employee=Employee::all();
+        $employee=Employee::orderBy('id', 'desc')->get();
       return view('admin.employee_lists',compact('employee'));
     }
+
+    public function details($id){
+      $employee=Employee::orderBy('id', 'desc')->get();
+    return view('details');
+  }
 }

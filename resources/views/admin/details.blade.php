@@ -34,7 +34,7 @@
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
+            {{-- <tbody>
                 @foreach($employee as $row)
               <tr>
 
@@ -45,9 +45,9 @@
                 <td><a href="{{ url('details/'.$roe->id) }}" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
 
               </tr>
-  @endforeach
+            @endforeach
 
-            </tbody>
+            </tbody> --}}
 
           </table>
         </div>

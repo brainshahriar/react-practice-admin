@@ -8,13 +8,13 @@
 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-      <div class="breadcrumb-title pe-3">Employee Lists</div>
+      <div class="breadcrumb-title pe-3">Employee Details</div>
       <div class="ps-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb mb-0 p-0">
             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Employee Lists</li>
+            <li class="breadcrumb-item active" aria-current="page">Employee Details</li>
           </ol>
         </nav>
       </div>
@@ -41,7 +41,7 @@
             <tr>
               <td>{{$loop->index+1}}</td>
                 <td>{{$row->present_date}}</td>
-              <td>{{$row->present_time}}</td>
+              <td class="text-danger"><strong>{{$row->present_time}}</strong></td>
               <td>{{$row->reason}}</td>
               <td><a href="" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
             </tr>
@@ -68,7 +68,7 @@
             <tr>
               <td>{{$loop->index+1}}</td>
                 <td>{{$row->out_date}}</td>
-              <td>{{$row->out_time}}</td>
+              <td class="text-danger"><strong>{{$row->out_time}}</strong></td>
               <td>{{$row->out_reason}}</td>
               <td><a href="" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
             </tr>

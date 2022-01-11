@@ -15,18 +15,18 @@ class EmployeeController extends Controller
     public function indexapi()
     {
         $user=User::all();
-        $employeeArray=[];
-        foreach($user as $value){
-            $employee=Employee::where('user_id',$value['id'])->orderBy('id', 'desc')->take(1)->get();
-            $item=[
+        // $employeeArray=[];
+        // foreach($user as $value){
+        //     $employee=Employee::where('user_id',$value['id'])->orderBy('id', 'desc')->take(1)->get();
+        //     $item=[
 
-                'name'=>$value['name'],
-                'employee'=>$employee
+        //         'name'=>$value['name'],
+        //         'employee'=>$employee
 
-            ];
-            array_push($employeeArray,$item);
-        }
-        return $employeeArray;
+        //     ];
+        //     array_push($employeeArray,$item);
+        // }
+        return $user;
     }
     function storeapi(Request $request)
     {
@@ -47,19 +47,19 @@ class EmployeeController extends Controller
       ]);
       return $upload;
     }
-function updatestoreapi(Request $request,$id)
+function updatestoreapi(Request $request)
     {
       $image = $request->file('image');
       $name_gen=hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
       Image::make($image)->resize(250,250)->save('uploads/image/'.$name_gen);
       $save_url = 'uploads/image/'.$name_gen;
 
-      $user_id=$request->input('user_id');
+      $id=$request->input('id');
       $designation=$request->input('designation');
 
-      $upload=Employee::where('user_id',$id)->update([
+      $upload=User::where('id',$id)->update([
 
-        'user_id'=>$user_id,
+        'id'=>$id,
           'image' => $save_url,
           'designation'=>$designation
 

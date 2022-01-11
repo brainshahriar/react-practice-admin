@@ -36,7 +36,7 @@ Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
 
 //all employee route
 
-Route::post('/employeeupdatestore/{id}',[EmployeeController::class, 'updatestoreapi']);
+Route::post('/employeeupdatestore',[EmployeeController::class, 'updatestoreapi']);
 Route::post('/employeestore',[EmployeeController::class, 'storeapi']);
 Route::get('/allemployee',[EmployeeController::class, 'indexapi']);
 

@@ -9,7 +9,10 @@
 
     @include('admin.inc.style')
 
-    <title>{{ config('app.name', 'Evergrow - Forex and Crypto Asset Management') }}</title>
+    <title>
+    GSDA</title>
+    <link rel = "icon" href ="{{asset('backend/assets/images/profile.png')}}" 
+        type = "image/x-icon">
 </head>
 
 <body>

@@ -2,209 +2,353 @@
 
 @section('content')
 
+<style type="text/css">
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue),10%,90%);
+  --fg: hsl(var(--hue),10%,10%);
+  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body, button {
+  color: var(--fg);
+  font: 1em/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+body {
+  background-color: var(--bg);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
 
-<div class="card-body">
-    <div class="d-flex align-items-center">
-        <div>
-            <h5 class="mb-0">Orders Summary</h5>
-        </div>
-        <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
-        </div>
-    </div>
-    <hr>
-    <div class="table-responsive">
-        <table class="table align-middle mb-0">
-            <thead class="table-light">
-                <tr>
-                    <th>Order id</th>
-                    <th>Product</th>
-                    <th>Customer</th>
-                    <th>Date</th>
-                    <th>Price</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>#897656</td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="recent-product-img">
-                                <img src="{{ asset('backend') }}/assets/images/icons/chair.png" alt="">
-                            </div>
-                            <div class="ms-2">
-                                <h6 class="mb-1 font-14">Light Blue Chair</h6>
-                            </div>
-                        </div>
-                    </td>
-                    <td>Brooklyn Zeo</td>
-                    <td>12 Jul 2020</td>
-                    <td>$64.00</td>
-                    <td>
-                        <div class="badge rounded-pill bg-light-info text-info w-100">In Progress
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex order-actions"> <a href="javascript:;" class=""><i class="bx bx-cog"></i></a>
-                            <a href="javascript:;" class="ms-4"><i class="bx bx-down-arrow-alt"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>#987549</td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="recent-product-img">
-                                <img src="{{ asset('backend') }}/assets/images/icons/shoes.png" alt="">
-                            </div>
-                            <div class="ms-2">
-                                <h6 class="mb-1 font-14">Green Sport Shoes</h6>
-                            </div>
-                        </div>
-                    </td>
-                    <td>Martin Hughes</td>
-                    <td>14 Jul 2020</td>
-                    <td>$45.00</td>
-                    <td>
-                        <div class="badge rounded-pill bg-light-success text-success w-100">
-                            Completed</div>
-                    </td>
-                    <td>
-                        <div class="d-flex order-actions"> <a href="javascript:;" class=""><i class="bx bx-cog"></i></a>
-                            <a href="javascript:;" class="ms-4"><i class="bx bx-down-arrow-alt"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>#685749</td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="recent-product-img">
-                                <img src="{{ asset('backend') }}/assets/images/icons/headphones.png" alt="">
-                            </div>
-                            <div class="ms-2">
-                                <h6 class="mb-1 font-14">Red Headphone 07</h6>
-                            </div>
-                        </div>
-                    </td>
-                    <td>Shoan Stephen</td>
-                    <td>15 Jul 2020</td>
-                    <td>$67.00</td>
-                    <td>
-                        <div class="badge rounded-pill bg-light-danger text-danger w-100">Cancelled
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex order-actions"> <a href="javascript:;" class=""><i class="bx bx-cog"></i></a>
-                            <a href="javascript:;" class="ms-4"><i class="bx bx-down-arrow-alt"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>#887459</td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="recent-product-img">
-                                <img src="{{ asset('backend') }}/assets/images/icons/idea.png" alt="">
-                            </div>
-                            <div class="ms-2">
-                                <h6 class="mb-1 font-14">Mini Laptop Device</h6>
-                            </div>
-                        </div>
-                    </td>
-                    <td>Alister Campel</td>
-                    <td>18 Jul 2020</td>
-                    <td>$87.00</td>
-                    <td>
-                        <div class="badge rounded-pill bg-light-success text-success w-100">
-                            Completed</div>
-                    </td>
-                    <td>
-                        <div class="d-flex order-actions"> <a href="javascript:;" class=""><i class="bx bx-cog"></i></a>
-                            <a href="javascript:;" class="ms-4"><i class="bx bx-down-arrow-alt"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>#335428</td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="recent-product-img">
-                                <img src="{{ asset('backend') }}/assets/images/icons/user-interface.png" alt="">
-                            </div>
-                            <div class="ms-2">
-                                <h6 class="mb-1 font-14">Purple Mobile Phone</h6>
-                            </div>
-                        </div>
-                    </td>
-                    <td>Keate Medona</td>
-                    <td>20 Jul 2020</td>
-                    <td>$75.00</td>
-                    <td>
-                        <div class="badge rounded-pill bg-light-info text-info w-100">In Progress
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex order-actions"> <a href="javascript:;" class=""><i class="bx bx-cog"></i></a>
-                            <a href="javascript:;" class="ms-4"><i class="bx bx-down-arrow-alt"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>#224578</td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="recent-product-img">
-                                <img src="{{ asset('backend') }}/assets/images/icons/watch.png" alt="">
-                            </div>
-                            <div class="ms-2">
-                                <h6 class="mb-1 font-14">Smart Hand Watch</h6>
-                            </div>
-                        </div>
-                    </td>
-                    <td>Winslet Maya</td>
-                    <td>22 Jul 2020</td>
-                    <td>$80.00</td>
-                    <td>
-                        <div class="badge rounded-pill bg-light-danger text-danger w-100">Cancelled
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex order-actions"> <a href="javascript:;" class=""><i class="bx bx-cog"></i></a>
-                            <a href="javascript:;" class="ms-4"><i class="bx bx-down-arrow-alt"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>#447896</td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="recent-product-img">
-                                <img src="{{ asset('backend') }}/assets/images/icons/tshirt.png" alt="">
-                            </div>
-                            <div class="ms-2">
-                                <h6 class="mb-1 font-14">T-Shirt Blue</h6>
-                            </div>
-                        </div>
-                    </td>
-                    <td>Emy Jackson</td>
-                    <td>28 Jul 2020</td>
-                    <td>$96.00</td>
-                    <td>
-                        <div class="badge rounded-pill bg-light-success text-success w-100">
-                            Completed</div>
-                    </td>
-                    <td>
-                        <div class="d-flex order-actions"> <a href="javascript:;" class=""><i class="bx bx-cog"></i></a>
-                            <a href="javascript:;" class="ms-4"><i class="bx bx-down-arrow-alt"></i></a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+.progress-clock {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  text-align: center;
+  width: 16em;
+  height: 16em;
+}
+.progress-clock__time-date,
+.progress-clock__time-digit,
+.progress-clock__time-colon,
+.progress-clock__time-ampm {
+  transition: color 0.2s linear;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.progress-clock__time-date,
+.progress-clock__time-digit {
+  background: transparent;
+}
+.progress-clock__time-date,
+.progress-clock__time-ampm {
+  grid-column: 1 / 6;
+}
+.progress-clock__time-date {
+  font-size: 0.75em;
+  line-height: 1.33;
+}
+.progress-clock__time-digit,
+.progress-clock__time-colon {
+  font-size: 2em;
+  font-weight: 400;
+  grid-row: 2;
+}
+.progress-clock__time-colon {
+  line-height: 1.275;
+}
+.progress-clock__time-ampm {
+  cursor: default;
+  grid-row: 3;
+}
+.progress-clock__rings {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.progress-clock__ring {
+  opacity: 0.1;
+}
+.progress-clock__ring-fill {
+  transition:
+    opacity 0s 0.3s linear,
+    stroke-dashoffset 0.3s ease-in-out;
+}
+.progress-clock__ring-fill--360 {
+  opacity: 0;
+  stroke-dashoffset: 0;
+  transition-duration: 0.3s;
+}
+[data-group]:focus {
+  outline: transparent;
+}
+[data-units] {
+  transition: opacity 0.2s linear;
+}
+[data-group="d"]:focus,
+[data-group="d"]:hover {
+  color: hsl(333,90%,55%);
+}
+[data-group="h"]:focus,
+[data-group="h"]:hover {
+  color: hsl(33,90%,55%);
+}
+[data-group="m"]:focus,
+[data-group="m"]:hover {
+  color: hsl(213,90%,55%);
+}
+[data-group="s"]:focus,
+[data-group="s"]:hover {
+  color: hsl(273,90%,55%);
+}
+[data-group]:focus ~ .progress-clock__rings [data-units],
+[data-group]:hover ~ .progress-clock__rings [data-units] {
+  opacity: 0.2;
+}
+[data-group="d"]:focus ~ .progress-clock__rings [data-units="d"],
+[data-group="d"]:hover ~ .progress-clock__rings [data-units="d"],
+[data-group="h"]:focus ~ .progress-clock__rings [data-units="h"],
+[data-group="h"]:hover ~ .progress-clock__rings [data-units="h"],
+[data-group="m"]:focus ~ .progress-clock__rings [data-units="m"],
+[data-group="m"]:hover ~ .progress-clock__rings [data-units="m"],
+[data-group="s"]:focus ~ .progress-clock__rings [data-units="s"],
+[data-group="s"]:hover ~ .progress-clock__rings [data-units="s"] {
+  opacity: 1;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue),10%,10%);
+    --fg: hsl(var(--hue),10%,90%);
+  }
+  .progress-clock__ring {
+    opacity: 0.2;
+  }
+}
+</style>
+<div id="clock" class="progress-clock">
+  <button class="progress-clock__time-date" data-group="d" type="button">
+    <small data-unit="w">Sunday</small><br>
+    <span data-unit="mo">January</span>
+    <span data-unit="d">1</span>
+  </button>
+  <button class="progress-clock__time-digit" data-unit="h" data-group="h" type="button">12</button><span class="progress-clock__time-colon">:</span><button class="progress-clock__time-digit" data-unit="m" data-group="m" type="button">00</button><span class="progress-clock__time-colon">:</span><button class="progress-clock__time-digit" data-unit="s" data-group="s" type="button">00</button>
+  <span class="progress-clock__time-ampm" data-unit="ap">AM</span>
+  <svg class="progress-clock__rings" width="256" height="256" viewBox="0 0 256 256">
+    <defs>
+      <linearGradient id="pc-red" x1="1" y1="0.5" x2="0" y2="0.5">
+        <stop offset="0%" stop-color="hsl(343,90%,55%)" />
+        <stop offset="100%" stop-color="hsl(323,90%,55%)" />
+      </linearGradient>
+      <linearGradient id="pc-yellow" x1="1" y1="0.5" x2="0" y2="0.5">
+        <stop offset="0%" stop-color="hsl(43,90%,55%)" />
+        <stop offset="100%" stop-color="hsl(23,90%,55%)" />
+      </linearGradient>
+      <linearGradient id="pc-blue" x1="1" y1="0.5" x2="0" y2="0.5">
+        <stop offset="0%" stop-color="hsl(223,90%,55%)" />
+        <stop offset="100%" stop-color="hsl(203,90%,55%)" />
+      </linearGradient>
+      <linearGradient id="pc-purple" x1="1" y1="0.5" x2="0" y2="0.5">
+        <stop offset="0%" stop-color="hsl(283,90%,55%)" />
+        <stop offset="100%" stop-color="hsl(263,90%,55%)" />
+      </linearGradient>
+    </defs>
+    <!-- Days of Month -->
+    <g data-units="d">
+      <circle class="progress-clock__ring" cx="128" cy="128" r="74" fill="none" opacity="0.1" stroke="url(#pc-red)" stroke-width="12" />
+      <circle class="progress-clock__ring-fill" data-ring="mo" cx="128" cy="128" r="74" fill="none" stroke="url(#pc-red)" stroke-width="12" stroke-dasharray="465 465" stroke-dashoffset="465" stroke-linecap="round" transform="rotate(-90,128,128)" />
+    </g>
+    <!-- Hours of Day -->
+    <g data-units="h">
+      <circle class="progress-clock__ring" cx="128" cy="128" r="90" fill="none" opacity="0.1" stroke="url(#pc-yellow)" stroke-width="12" />
+      <circle class="progress-clock__ring-fill" data-ring="d" cx="128" cy="128" r="90" fill="none" stroke="url(#pc-yellow)" stroke-width="12" stroke-dasharray="565.5 565.5" stroke-dashoffset="565.5" stroke-linecap="round" transform="rotate(-90,128,128)" />
+    </g>
+    <!-- Minutes of Hour -->
+    <g data-units="m">
+      <circle class="progress-clock__ring" cx="128" cy="128" r="106" fill="none" opacity="0.1" stroke="url(#pc-blue)" stroke-width="12" />
+      <circle class="progress-clock__ring-fill" data-ring="h" cx="128" cy="128" r="106" fill="none" stroke="url(#pc-blue)" stroke-width="12" stroke-dasharray="666 666" stroke-dashoffset="666" stroke-linecap="round" transform="rotate(-90,128,128)" />
+    </g>
+    <!-- Seconds of Minute -->
+    <g data-units="s">
+      <circle class="progress-clock__ring" cx="128" cy="128" r="122" fill="none" opacity="0.1" stroke="url(#pc-purple)" stroke-width="12" />
+      <circle class="progress-clock__ring-fill" data-ring="m" cx="128" cy="128" r="122" fill="none" stroke="url(#pc-purple)" stroke-width="12" stroke-dasharray="766.5 766.5" stroke-dashoffset="766.5" stroke-linecap="round" transform="rotate(-90,128,128)" />
+    </g>
+  </svg>
 </div>
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded",() => {
+  const clock = new ProgressClock("#clock");
+});
 
+class ProgressClock {
+  constructor(qs) {
+    this.el = document.querySelector(qs);
+    this.time = 0;
+    this.updateTimeout = null;
+    this.ringTimeouts = [];
+    this.update();
+  }
+  getDayOfWeek(day) {
+    switch (day) {
+      case 1:
+        return "Monday";
+      case 2:
+        return "Tuesday";
+      case 3:
+        return "Wednesday";
+      case 4:
+        return "Thursday";
+      case 5:
+        return "Friday";
+      case 6:
+        return "Saturday";
+      default:
+        return "Sunday";
+    }
+  }
+  getMonthInfo(mo,yr) {
+    switch (mo) {
+      case 1:
+        return { name: "February", days: yr % 4 === 0 ? 29 : 28 };
+      case 2:
+        return { name: "March", days: 31 };
+      case 3:
+        return { name: "April", days: 30 };
+      case 4:
+        return { name: "May", days: 31 };
+      case 5:
+        return { name: "June", days: 30 };
+      case 6:
+        return { name: "July", days: 31 };
+      case 7:
+        return { name: "August", days: 31 };
+      case 8:
+        return { name: "September", days: 30 };
+      case 9:
+        return { name: "October", days: 31 };
+      case 10:
+        return { name: "November", days: 30 };
+      case 11:
+        return { name: "December", days: 31 };
+      default:
+        return { name: "January", days: 31 };
+    }
+  }
+  update() {
+    this.time = new Date();
 
+    if (this.el) {
+      // date and time
+      const dayOfWeek = this.time.getDay();
+      const year = this.time.getFullYear();
+      const month = this.time.getMonth();
+      const day = this.time.getDate();
+      const hr = this.time.getHours();
+      const min = this.time.getMinutes();
+      const sec = this.time.getSeconds();
+      const dayOfWeekName = this.getDayOfWeek(dayOfWeek);
+      const monthInfo = this.getMonthInfo(month,year);
+      const m_progress = sec / 60;
+      const h_progress = (min + m_progress) / 60;
+      const d_progress = (hr + h_progress) / 24;
+      const mo_progress = ((day - 1) + d_progress) / monthInfo.days;
+      const units = [
+        {
+          label: "w",
+          value: dayOfWeekName
+        },
+        {
+          label: "mo",
+          value: monthInfo.name,
+          progress: mo_progress
+        },
+        {
+          label: "d", 
+          value: day,
+          progress: d_progress
+        },
+        {
+          label: "h", 
+          value: hr > 12 ? hr - 12 : hr,
+          progress: h_progress
+        },
+        {
+          label: "m", 
+          value: min < 10 ? "0" + min : min,
+          progress: m_progress
+        },
+        {
+          label: "s", 
+          value: sec < 10 ? "0" + sec : sec
+        },
+        {
+          label: "ap",
+          value: hr > 12 ? "PM" : "AM"
+        }
+      ];
+
+      // flush out the timeouts
+      this.ringTimeouts.forEach(t => {
+        clearTimeout(t);
+      });
+      this.ringTimeouts = [];
+
+      // update the display
+      units.forEach(u => {
+        // rings
+        const ring = this.el.querySelector(`[data-ring="${u.label}"]`);
+
+        if (ring) {
+          const strokeDashArray = ring.getAttribute("stroke-dasharray");
+          const fill360 = "progress-clock__ring-fill--360";
+
+          if (strokeDashArray) {
+            // calculate the stroke
+            const circumference = +strokeDashArray.split(" ")[0];
+            const strokeDashOffsetPct = 1 - u.progress;
+
+            ring.setAttribute(
+              "stroke-dashoffset",
+              strokeDashOffsetPct * circumference
+            );
+
+            // add the fade-out transition, then remove it
+            if (strokeDashOffsetPct === 1) {
+              ring.classList.add(fill360);
+
+              this.ringTimeouts.push(
+                setTimeout(() => {
+                  ring.classList.remove(fill360);
+                }, 600)
+              );
+            }
+          }
+        }
+
+        // digits
+        const unit = this.el.querySelector(`[data-unit="${u.label}"]`);
+
+        if (unit)
+          unit.innerText = u.value;
+      });
+    }
+
+    clearTimeout(this.updateTimeout);
+    this.updateTimeout = setTimeout(this.update.bind(this),1e3);
+  }
+}
+</script>
 @endsection

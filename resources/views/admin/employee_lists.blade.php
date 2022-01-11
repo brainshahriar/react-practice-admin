@@ -39,10 +39,10 @@
               <tr>
 
                 <td>{{$loop->index+1}}</td>
-                <td>{{$row->user->name}}</td>
+                <td>{{$row->name}}</td>
                 <td>{{$row->designation}}</td>
-                <td>00{{$row->user->id}}</td>
-                <td><a href="{{ url('details/'.$row->user->id) }}" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
+                <td>00{{$row->id}}</td>
+                <td><a href="{{ url('details/'.$row->id) }}" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
 
               </tr>
   @endforeach

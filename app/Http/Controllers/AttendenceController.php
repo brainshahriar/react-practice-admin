@@ -10,6 +10,7 @@ use Carbon\Carbon;
 
 class AttendenceController extends Controller
 {
+
     public function indexapi(Request $request){
 
         $request->validate([

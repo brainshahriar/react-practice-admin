@@ -43,7 +43,7 @@
                 <td>{{$row->present_date}}</td>
               <td class="text-danger"><strong>{{$row->present_time}}</strong></td>
               <td>{{$row->reason}}</td>
-              <td><a href="" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
+              <td><button type="button" class="btn btn-sm btn-success px-2">See Details</button></td>
             </tr>
           @endforeach
 
@@ -70,7 +70,7 @@
                 <td>{{$row->out_date}}</td>
               <td class="text-danger"><strong>{{$row->out_time}}</strong></td>
               <td>{{$row->out_reason}}</td>
-              <td><a href="" type="button" class="btn btn-sm btn-success px-2">See Details</a></td>
+              <td><button type="button" class="btn btn-sm btn-success px-2">See Details</button></td>
             </tr>
           @endforeach
 

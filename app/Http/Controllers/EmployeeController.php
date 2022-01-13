@@ -12,6 +12,7 @@ use Auth;
 
 class EmployeeController extends Controller
 {
+
     public function indexapi()
     {
         $user=User::all();

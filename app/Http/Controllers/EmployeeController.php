@@ -15,7 +15,7 @@ class EmployeeController extends Controller
 
     public function indexapi()
     {
-        $user=User::all();
+        $user=User::where('id','!=','11')->get();
         // $employeeArray=[];
         // foreach($user as $value){
         //     $employee=Employee::where('user_id',$value['id'])->orderBy('id', 'desc')->take(1)->get();

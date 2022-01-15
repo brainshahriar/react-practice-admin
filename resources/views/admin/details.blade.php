@@ -43,11 +43,7 @@
                 <td>{{$row->present_date}}</td>
               <td class="text-danger"><strong>{{$row->present_time}}</strong></td>
               <td>{{$row->reason}}</td>
-              @if($row->present_time=='10:30:33am')
-              <td><button type="button" class="btn btn-sm btn-success px-2">On Time</button></td>
-              @else
-               <td><button type="button" class="btn btn-sm btn-danger px-2">Late</button></td>
-               @endif
+              <td><button type="button" class="btn btn-sm btn-success px-2"><strong>{{$row->present_time}}</strong></button></td>
             </tr>
           @endforeach
 
@@ -74,7 +70,7 @@
                 <td>{{$row->out_date}}</td>
               <td class="text-danger"><strong>{{$row->out_time}}</strong></td>
               <td>{{$row->out_reason}}</td>
-              <td><button type="button" class="btn btn-sm btn-success px-2">See Details</button></td>
+                 <td><button type="button" class="btn btn-sm btn-danger px-2"><strong>{{$row->out_time}}</strong></button></td>
             </tr>
           @endforeach
 

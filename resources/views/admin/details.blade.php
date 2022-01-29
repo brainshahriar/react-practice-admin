@@ -32,7 +32,7 @@
               <th>#</th>
               <th>Date</th>
               <th>In Time</th>
-              <th>Late Reasons</th>
+              <th>Late Reason</th>
               <th>Status</th>
             </tr>
           </thead>

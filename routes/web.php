@@ -32,3 +32,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //all employee
 Route::get('/allemployee',[EmployeeController::class, 'index'])->name('allemployee');
 Route::get('/details/{id}',[EmployeeController::class, 'details']);
+Route::get('/allemployee',[EmployeeController::class, 'index'])->name('allemployee');
+Route::get('/details/{id}',[EmployeeController::class, 'details']);

@@ -51,7 +51,6 @@ Route::post('/attendenceupdate',[AttendenceController::class, 'updateapi']);
 
 Route::get('/details/{id}',[EmployeeController::class, 'details']);
 
-Route::get('/details/{id}',[EmployeeController::class, 'details']);
 
 
 
